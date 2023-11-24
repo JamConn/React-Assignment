@@ -6,7 +6,7 @@ const MoviesContextProvider = (props) => {
   const [favorites, setFavorites] = useState( [] )
   const [mustWatch, setMustWatch] = useState( {} ) 
   const [myReviews, setMyReviews] = useState( {} ) 
- 
+
   const addToFavorites = (movie) => {
     let newFavorites = [];
     if (!favorites.includes(movie.id)){
