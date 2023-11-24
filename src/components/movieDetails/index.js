@@ -9,6 +9,9 @@ import Fab from "@mui/material/Fab";
 import Typography from "@mui/material/Typography";
 import Drawer from "@mui/material/Drawer";
 import MovieReviews from "../movieReviews"
+import Grid from "@mui/material/Grid";
+import MovieRecommendation from "../movieRecommendation";
+
 
 
 
@@ -24,6 +27,8 @@ const chip = { margin: 0.5 };
 
 const MovieDetails = ({ movie }) => {  // Don't miss this!
   const [drawerOpen, setDrawerOpen] = useState(false);
+
+
 
   return (
     <>
@@ -73,7 +78,17 @@ const MovieDetails = ({ movie }) => {  // Don't miss this!
           </li>
         ))}
       </Paper>
-      <Fab
+      <Paper>
+      <Typography variant="h5" component="h3">
+        Recommended Movies
+      </Typography>
+    <Grid container sx={{ padding: '20px' }}>
+      <Grid item container spacing={5}>
+      <MovieRecommendation movie={movie} />
+      </Grid>
+    </Grid>
+      </Paper>
+    <Fab
         color="secondary"
         variant="extended"
         onClick={() =>setDrawerOpen(true)}
@@ -92,4 +107,5 @@ const MovieDetails = ({ movie }) => {  // Don't miss this!
       </>
   );
 };
-export default MovieDetails ;
+
+export default MovieDetails;
