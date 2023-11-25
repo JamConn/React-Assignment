@@ -20,6 +20,10 @@ const PopularMoviesPage = (props) => {
     const popular = data.results;
 
 
+    const mustWatch = popular.filter(m => m.mustWatch)
+    localStorage.setItem('mustWatch', JSON.stringify(mustWatch))
+
+
     return (
         <PageTemplate
             title='Popular Movies'

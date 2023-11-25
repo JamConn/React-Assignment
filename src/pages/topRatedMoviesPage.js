@@ -20,6 +20,9 @@ const TopRatedMoviesPage = (props) => {
     }
     const toprated = data.results;
 
+    const mustWatch = toprated.filter(m => m.mustWatch)
+    localStorage.setItem('mustWatch', JSON.stringify(mustWatch))
+
 
     return (
         <PageTemplate

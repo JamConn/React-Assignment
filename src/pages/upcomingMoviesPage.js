@@ -20,6 +20,8 @@ const UpcomingMoviesPage = (props) => {
   }
   const upcoming = data.results;
 
+  const mustWatch = upcoming.filter(m => m.mustWatch)
+  localStorage.setItem('mustWatch', JSON.stringify(mustWatch))
 
 
   return (

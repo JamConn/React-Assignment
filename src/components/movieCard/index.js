@@ -14,15 +14,28 @@ import Grid from "@mui/material/Grid";
 import img from '../../images/film-poster-placeholder.png'
 import { Link } from "react-router-dom";
 import Avatar from '@mui/material/Avatar';
+import MustWatchIcon from "../cardIcons/mustWatch";
 
 export default function MovieCard({ movie, action }) {
   const { favorites } = useContext(MoviesContext);
+  const {mustWatch} = useContext(MoviesContext);
 
   if (favorites.find((id) => id === movie.id)) {
     movie.favorite = true;
   } else {
     movie.favorite = false
+  } 
+  
+  if  (mustWatch.find((id2) => id2 === movie.id)){
+    movie.mustWatch = true;
+  } else {
+    movie.mustWatch = false
   }
+
+  
+
+
+
 
   return (
     <Card sx={{ maxWidth: 345 }}>
@@ -32,8 +45,14 @@ export default function MovieCard({ movie, action }) {
             <Avatar sx={{ backgroundColor: 'red' }}>
               <FavoriteIcon />
             </Avatar>
-          ) : null
+          ) : movie.mustWatch ? (
+            <Avatar sx={{ backgroundColor: 'purple' }}>
+              <MustWatchIcon />
+            </Avatar>
+          ) :null  
+
         }
+
         title={
           <Typography variant="h5" component="p">
             {movie.title}{" "}
