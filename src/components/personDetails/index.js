@@ -1,6 +1,9 @@
 import React from "react";
 import Typography from "@mui/material/Typography";
 import Paper from "@mui/material/Paper";
+import Grid from "@mui/material/Grid";
+import { Link } from "react-router-dom";
+import { Button } from "@mui/material"; 
 
 const PersonDetails = ({ person }) => {  // Don't miss this!
  
@@ -33,6 +36,22 @@ const PersonDetails = ({ person }) => {  // Don't miss this!
       {person.place_of_birth}
       </Typography>
       </Paper>
+
+      <Typography variant="h5" component="p">
+      Credits:
+
+      </Typography>
+      <Paper>
+      <Grid container rowSpacing={1} columnSpacing={{ xs: 2, sm: 2, md: 3 }}>
+      <Grid item xs={2}>
+     <Link to={`credits`}>
+     <Button variant="outlined" size="medium" color="secondary" sx={{ padding: '20px' }}>
+      CREDITS
+      </Button>
+     </Link>
+     </Grid>
+     </Grid>
+     </Paper>
       </>
   );
 };

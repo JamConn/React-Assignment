@@ -1,16 +1,18 @@
 import React from "react";
 import { useParams } from 'react-router-dom';
-import { getMovieCredits } from '../api/tmdb-api'
+import { getPersonCredits } from '../api/tmdb-api'
 import { useQuery } from "react-query";
-import MovieCreditPageTemplate from "../components/movieCreditPageTemplate"
+import PersonCreditsPageTemplate from "../components/templarePersonCreditsPage";
 import Spinner from '../components/spinner'
 
-const MovieCreditsPage = (props) => {
+
+
+const PersonCreditsPage = (props) => {
    const { id } = useParams();
   
    const { data, error, isLoading, isError } = useQuery(
-     ["movie", { id: id }, "credits"],
-     getMovieCredits
+     ["person", { id: id }, "movie_credits"],
+     getPersonCredits
    );
  
    if (isLoading) {
@@ -20,12 +22,13 @@ const MovieCreditsPage = (props) => {
    if (isError) {
      return <h1>{error.message}</h1>;
    }
-
    return (
      <>
-     <MovieCreditPageTemplate credits={data}></MovieCreditPageTemplate>
+
+     <PersonCreditsPageTemplate credits={data}></PersonCreditsPageTemplate>
+
      </>
   );
 };
 
-export default MovieCreditsPage;
+export default PersonCreditsPage;

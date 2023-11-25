@@ -100,7 +100,7 @@ const MovieDetails = ({ movie }) => {  // Don't miss this!
   </Grid>
   <Grid item xs={2}>
  <Link to={`credits`}>
-  <Button variant="outlined" size="medium" color="primary" sx={{ padding: '20px' }}>
+  <Button variant="outlined" size="medium" color="secondary" sx={{ padding: '20px' }}>
   Test
   </Button>
  </Link>

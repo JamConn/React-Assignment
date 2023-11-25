@@ -1,4 +1,4 @@
-import React, {lazy, Suspense} from "react";
+import React from "react";
 import { useParams } from 'react-router-dom';
 import { getPerson } from '../api/tmdb-api'
 import { useQuery } from "react-query";
@@ -27,11 +27,10 @@ const PersonDetailsPage = (props) => {
     <>
       {person ? (
         <>
-        <Suspense fallback={<h1>Loading page</h1>}>
           <TemplatePersonPage person={person}>
             <PersonDetails person={person} />
           </TemplatePersonPage>
-        </Suspense>
+
         </>
       ) : (
         <p>Waiting for details</p>
