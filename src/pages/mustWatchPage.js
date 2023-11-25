@@ -16,6 +16,7 @@ const MustWatchPage = () => {
       return {
         queryKey: ["movie", { id: movieId }],
         queryFn: getMovie,
+        
       };
     })
   );
