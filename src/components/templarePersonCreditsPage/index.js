@@ -7,9 +7,9 @@ function PersonCreditsPageTemplate({ credits }) {
 
     return (
 
-        <Grid container sx={{ padding: '20px', backgroundColor: "rgba(0,0,0,0.1)" }}>
+        <Grid container sx={{ padding: '20px'}}>
             <Grid item xs={12}>
-                <Header title={`Movies starred in`} />
+                <Header title={`Credits:`} />
             </Grid>
             <Grid item container spacing={5} >
                 <PersonCreditsListed credits={credits}></PersonCreditsListed>
