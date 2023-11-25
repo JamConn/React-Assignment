@@ -15,7 +15,7 @@ const MovieRecommendation =  ({ movie }) => {
 
         let movieCards = recommendations.slice(0,4).map((m) => (
           <Grid key={m.id} item xs={4} sm={6} md={4} lg={3} xl={2}>
-            <MovieRecommendations key={m.id} movie={m}/>
+            <MovieRecommendations key={m.id} recommendation={m}/>
           </Grid>
         ));
         return movieCards;

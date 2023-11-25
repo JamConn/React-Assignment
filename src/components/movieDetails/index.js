@@ -11,8 +11,8 @@ import Drawer from "@mui/material/Drawer";
 import MovieReviews from "../movieReviews"
 import Grid from "@mui/material/Grid";
 import MovieRecommendation from "../movieRecommendation";
-
-
+import { Link } from "react-router-dom";
+import { Button } from "@mui/material";
 
 
 const root = {
@@ -87,7 +87,29 @@ const MovieDetails = ({ movie }) => {  // Don't miss this!
       <MovieRecommendation movie={movie} />
       </Grid>
     </Grid>
-      </Paper>
+</Paper>
+
+<Paper>
+  <Grid container rowSpacing={1} columnSpacing={{ xs: 2, sm: 2, md: 3 }}>
+  <Grid item xs={2}>
+  <Link to={`credits`}>
+  <Button variant="outlined" size="medium" color="primary" sx={{ padding: '20px' }}>
+   CREDITS
+  </Button>
+  </Link>
+  </Grid>
+  <Grid item xs={2}>
+ <Link to={`credits`}>
+  <Button variant="outlined" size="medium" color="primary" sx={{ padding: '20px' }}>
+  Test
+  </Button>
+ </Link>
+  </Grid>
+
+</Grid>
+</Paper>
+
+
     <Fab
         color="secondary"
         variant="extended"
