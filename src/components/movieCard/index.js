@@ -1,4 +1,4 @@
-import React, { useContext  } from "react";
+import React, { useContext } from "react";
 import { MoviesContext } from "../../contexts/moviesContext";
 import Card from "@mui/material/Card";
 import CardActions from "@mui/material/CardActions";
@@ -24,14 +24,9 @@ export default function MovieCard({ movie, action }) {
     movie.favorite = false
   }
 
-  // const handleAddToFavorite = (e) => {
-  //   e.preventDefault();
-  //   addToFavorites(movie);
-  // };
-
   return (
     <Card sx={{ maxWidth: 345 }}>
-<CardHeader
+      <CardHeader
         avatar={
           movie.favorite ? (
             <Avatar sx={{ backgroundColor: 'red' }}>

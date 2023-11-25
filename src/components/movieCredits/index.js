@@ -14,13 +14,13 @@ import { Link } from "react-router-dom";
 export default function MovieCredits({ credit }) {
 
 
-  return (
+    return (
 
-    <Card sx={{ maxWidth: 245 }}>
-         <CardHeader
-            title={<Typography variant="h5" component="p">
-                {credit.name}{" "}
-            </Typography>} />
+        <Card sx={{ maxWidth: 245 }}>
+            <CardHeader
+                title={<Typography variant="h5" component="p">
+                    {credit.name}{" "}
+                </Typography>} />
 
             <CardMedia
                 sx={{ height: 300 }}
@@ -39,15 +39,15 @@ export default function MovieCredits({ credit }) {
                         </Typography>
                     </Grid>
                 </Grid>
-                </CardContent><CardActions disableSpacing>
+            </CardContent><CardActions disableSpacing>
                 <Link to={`../../person/${credit.id}`}>
                     <Button variant="outlined" size="medium" color="primary">
                         More Info ...
                     </Button>
                 </Link>
             </CardActions>
-   </Card>
-  );
+        </Card>
+    );
 }
 
 

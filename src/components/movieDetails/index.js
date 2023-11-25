@@ -16,12 +16,12 @@ import { Button } from "@mui/material";
 
 
 const root = {
-    display: "flex",
-    justifyContent: "center",
-    flexWrap: "wrap",
-    listStyle: "none",
-    padding: 1.5,
-    margin: 0,
+  display: "flex",
+  justifyContent: "center",
+  flexWrap: "wrap",
+  listStyle: "none",
+  padding: 1.5,
+  margin: 0,
 };
 const chip = { margin: 0.5 };
 
@@ -40,20 +40,20 @@ const MovieDetails = ({ movie }) => {  // Don't miss this!
         {movie.overview}
       </Typography>
 
-      <Paper 
-        component="ul" 
-        sx={{...root}}
+      <Paper
+        component="ul"
+        sx={{ ...root }}
       >
         <li>
-          <Chip label="Genres" sx={{...chip}} color="primary" />
+          <Chip label="Genres" sx={{ ...chip }} color="primary" />
         </li>
         {movie.genres.map((g) => (
           <li key={g.name}>
-            <Chip label={g.name} sx={{...chip}} />
+            <Chip label={g.name} sx={{ ...chip }} />
           </li>
         ))}
       </Paper>
-      <Paper component="ul" sx={{...root}}>
+      <Paper component="ul" sx={{ ...root }}>
         <Chip icon={<AccessTimeIcon />} label={`${movie.runtime} min.`} />
         <Chip
           icon={<MonetizationIcon />}
@@ -65,55 +65,55 @@ const MovieDetails = ({ movie }) => {  // Don't miss this!
         />
         <Chip label={`Released: ${movie.release_date}`} />
       </Paper>
-      <Paper 
-        component="ul" 
-        sx={{...root}}
+      <Paper
+        component="ul"
+        sx={{ ...root }}
       >
         <li>
-          <Chip label="Production Countries" sx={{...chip}} color="primary" />
+          <Chip label="Production Countries" sx={{ ...chip }} color="primary" />
         </li>
         {movie.production_countries.map((g) => (
           <li key={g.name}>
-            <Chip label={g.name} sx={{...chip}} />
+            <Chip label={g.name} sx={{ ...chip }} />
           </li>
         ))}
       </Paper>
       <Paper>
-      <Typography variant="h5" component="h3">
-        Recommended Movies
-      </Typography>
-    <Grid container sx={{ padding: '20px' }}>
-      <Grid item container spacing={5}>
-      <MovieRecommendation movie={movie} />
-      </Grid>
-    </Grid>
-</Paper>
+        <Typography variant="h5" component="h3">
+          Recommended Movies
+        </Typography>
+        <Grid container sx={{ padding: '20px' }}>
+          <Grid item container spacing={5}>
+            <MovieRecommendation movie={movie} />
+          </Grid>
+        </Grid>
+      </Paper>
 
-<Paper>
-  <Grid container rowSpacing={1} columnSpacing={{ xs: 2, sm: 2, md: 3 }}>
-  <Grid item xs={2}>
-  <Link to={`credits`}>
-  <Button variant="outlined" size="medium" color="primary" sx={{ padding: '20px' }}>
-   CREDITS
-  </Button>
-  </Link>
-  </Grid>
-  <Grid item xs={2}>
- <Link to={`credits`}>
-  <Button variant="outlined" size="medium" color="secondary" sx={{ padding: '20px' }}>
-  Test
-  </Button>
- </Link>
-  </Grid>
+      <Paper>
+        <Grid container rowSpacing={1} columnSpacing={{ xs: 2, sm: 2, md: 3 }}>
+          <Grid item xs={2}>
+            <Link to={`credits`}>
+              <Button variant="outlined" size="medium" color="primary" sx={{ padding: '20px' }}>
+                CREDITS
+              </Button>
+            </Link>
+          </Grid>
+          <Grid item xs={2}>
+            <Link to={`credits`}>
+              <Button variant="outlined" size="medium" color="secondary" sx={{ padding: '20px' }}>
+                Test
+              </Button>
+            </Link>
+          </Grid>
 
-</Grid>
-</Paper>
+        </Grid>
+      </Paper>
 
 
-    <Fab
+      <Fab
         color="secondary"
         variant="extended"
-        onClick={() =>setDrawerOpen(true)}
+        onClick={() => setDrawerOpen(true)}
         sx={{
           position: 'fixed',
           bottom: '1em',
@@ -126,7 +126,7 @@ const MovieDetails = ({ movie }) => {  // Don't miss this!
       <Drawer anchor="top" open={drawerOpen} onClose={() => setDrawerOpen(false)}>
         <MovieReviews movie={movie} />
       </Drawer>
-      </>
+    </>
   );
 };
 

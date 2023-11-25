@@ -8,35 +8,35 @@ import Spinner from '../components/spinner'
 
 
 const PersonDetailsPage = (props) => {
-  const { id } = useParams();
-  
-  const { data: person, error, isLoading, isError } = useQuery(
-    ["person", { id: id }],
-    getPerson
-  );
+    const { id } = useParams();
 
-  if (isLoading) {
-    return <Spinner />;
-  }
+    const { data: person, error, isLoading, isError } = useQuery(
+        ["person", { id: id }],
+        getPerson
+    );
 
-  if (isError) {
-    return <h1>{error.message}</h1>;
-  }
+    if (isLoading) {
+        return <Spinner />;
+    }
 
-  return (
-    <>
-      {person ? (
+    if (isError) {
+        return <h1>{error.message}</h1>;
+    }
+
+    return (
         <>
-          <TemplatePersonPage person={person}>
-            <PersonDetails person={person} />
-          </TemplatePersonPage>
+            {person ? (
+                <>
+                    <TemplatePersonPage person={person}>
+                        <PersonDetails person={person} />
+                    </TemplatePersonPage>
 
+                </>
+            ) : (
+                <p>Waiting for details</p>
+            )}
         </>
-      ) : (
-        <p>Waiting for details</p>
-      )}
-    </>
-  );
+    );
 };
 
 export default PersonDetailsPage;

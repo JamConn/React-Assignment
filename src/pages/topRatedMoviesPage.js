@@ -9,26 +9,26 @@ import MustWatchIcon from "../components/cardIcons/mustWatch";
 
 
 const TopRatedMoviesPage = (props) => {
-  const {data, error, isLoading, isError }  = useQuery('TopRated', getTopRatedMovies)
+    const { data, error, isLoading, isError } = useQuery('TopRated', getTopRatedMovies)
 
-  if (isLoading) {
-    return <Spinner />
-  }
+    if (isLoading) {
+        return <Spinner />
+    }
 
-  if (isError) {
-    return <h1>{error.message}</h1>
-  }  
-  const toprated = data.results;
+    if (isError) {
+        return <h1>{error.message}</h1>
+    }
+    const toprated = data.results;
 
 
-  return (
-    <PageTemplate
-      title='Top Rated Movies'
-      movies={toprated}
-      action={(movie) => {
-        return <MustWatchIcon movie={movie} />
-      }}
-    />
-  );
+    return (
+        <PageTemplate
+            title='Top Rated Movies'
+            movies={toprated}
+            action={(movie) => {
+                return <MustWatchIcon movie={movie} />
+            }}
+        />
+    );
 };
 export default TopRatedMoviesPage;

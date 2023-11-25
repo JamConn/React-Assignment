@@ -63,21 +63,21 @@ const styles = {
 const ReviewForm = ({ movie }) => {
   const context = useContext(MoviesContext);
   const [rating, setRating] = useState(3);
-  const [open, setOpen] = useState(false); 
+  const [open, setOpen] = useState(false);
   const navigate = useNavigate();
 
   const handleSnackClose = (event) => {
     setOpen(false);
     navigate("/movies/favorites");
   };
-  
+
   const defaultValues = {
     author: "",
     review: "",
     agree: false,
     rating: "3",
   };
-  
+
   const {
     control,
     formState: { errors },
@@ -103,7 +103,7 @@ const ReviewForm = ({ movie }) => {
         Write a review
       </Typography>
 
-      
+
       <Snackbar
         sx={styles.snack}
         anchorOrigin={{ vertical: "top", horizontal: "right" }}

@@ -8,27 +8,27 @@ import Spinner from '../components/spinner'
 
 
 const PersonCreditsPage = (props) => {
-   const { id } = useParams();
-  
-   const { data, error, isLoading, isError } = useQuery(
-     ["person", { id: id }, "movie_credits"],
-     getPersonCredits
-   );
- 
-   if (isLoading) {
-     return <Spinner />;
-   }
- 
-   if (isError) {
-     return <h1>{error.message}</h1>;
-   }
-   return (
-     <>
+    const { id } = useParams();
 
-     <PersonCreditsPageTemplate credits={data}></PersonCreditsPageTemplate>
+    const { data, error, isLoading, isError } = useQuery(
+        ["person", { id: id }, "movie_credits"],
+        getPersonCredits
+    );
 
-     </>
-  );
+    if (isLoading) {
+        return <Spinner />;
+    }
+
+    if (isError) {
+        return <h1>{error.message}</h1>;
+    }
+    return (
+        <>
+
+            <PersonCreditsPageTemplate credits={data}></PersonCreditsPageTemplate>
+
+        </>
+    );
 };
 
 export default PersonCreditsPage;

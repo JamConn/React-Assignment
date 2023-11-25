@@ -20,7 +20,7 @@ const queryClient = new QueryClient({
   defaultOptions: {
     queries: {
       staleTime: 360000,
-      refetchInterval: 360000, 
+      refetchInterval: 360000,
       refetchOnWindowFocus: false
     },
   },
@@ -29,28 +29,28 @@ const queryClient = new QueryClient({
 const App = () => {
   return (
     <QueryClientProvider client={queryClient}>
-<BrowserRouter>
-      <SiteHeader />
-      <MoviesContextProvider>
-      <Routes>
-        <Route path="/reviews/:id" element={ <MovieReviewPage /> } />
-        <Route path="/movies/favorites" element={<FavoriteMoviesPage />} />
-        <Route path="/movies/upcoming" element={<UpcomingMoviesPage />} />
-        <Route path="/movies/toprated" element={ <TopRatedMoviesPage /> } />
-        <Route path="/reviews/form" element={ <AddMovieReviewPage /> } />
-        <Route path="/movies/:id/credits" element={<MovieCreditsPage/>} />
-        <Route path="/person/:id" element={<PersonDetailsPage/>} />
-        <Route path="/person/:id/credits" element={ <PersonCreditsPage /> } />
-        <Route path="/movies/:id" element={<MoviePage />} />
-        <Route path="/" element={<HomePage />} />
-        <Route path="*" element={ <Navigate to="/" /> } />
-      </Routes>
-      </MoviesContextProvider>
-    </BrowserRouter>
-    <ReactQueryDevtools initialIsOpen={false} />
+      <BrowserRouter>
+        <SiteHeader />
+        <MoviesContextProvider>
+          <Routes>
+            <Route path="/reviews/:id" element={<MovieReviewPage />} />
+            <Route path="/movies/favorites" element={<FavoriteMoviesPage />} />
+            <Route path="/movies/upcoming" element={<UpcomingMoviesPage />} />
+            <Route path="/movies/toprated" element={<TopRatedMoviesPage />} />
+            <Route path="/reviews/form" element={<AddMovieReviewPage />} />
+            <Route path="/movies/:id/credits" element={<MovieCreditsPage />} />
+            <Route path="/person/:id" element={<PersonDetailsPage />} />
+            <Route path="/person/:id/credits" element={<PersonCreditsPage />} />
+            <Route path="/movies/:id" element={<MoviePage />} />
+            <Route path="/" element={<HomePage />} />
+            <Route path="*" element={<Navigate to="/" />} />
+          </Routes>
+        </MoviesContextProvider>
+      </BrowserRouter>
+      <ReactQueryDevtools initialIsOpen={false} />
     </QueryClientProvider>
   );
 };
 
-const rootElement = createRoot( document.getElementById("root") )
+const rootElement = createRoot(document.getElementById("root"))
 rootElement.render(<App />);
