@@ -93,7 +93,7 @@ const MovieDetails = ({ movie }) => {  // Don't miss this!
         <Grid container rowSpacing={1} columnSpacing={{ xs: 2, sm: 2, md: 3 }}>
           <Grid item xs={2}>
             <Link to={`credits`}>
-              <Button variant="outlined" size="medium" color="primary" sx={{ padding: '20px' }}>
+              <Button variant="outlined" size="medium" color="secondary" sx={{ padding: '20px' }}>
                 CREDITS
               </Button>
             </Link>
